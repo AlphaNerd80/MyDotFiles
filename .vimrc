@@ -17,6 +17,11 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Lokaltog/powerline'
+Bundle 'digitalToad/vim-jade'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'amiorin/vim-project'
+Bundle 'yegappan/mru'
+Bundle 'https://bitbucket.org/ns9tks/vim-autocomplpop'
 
 filetype plugin indent on
    
