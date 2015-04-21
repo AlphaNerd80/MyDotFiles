@@ -1,0 +1,49 @@
+
+
+execute pathogen#infect()
+execute pathogen#helptags()
+
+syntax on
+filetype plugin indent on
+
+" define the tab completion with supertab and omnicomplete
+" source:
+" http://www.sontek.net/blog/2011/05/07/turning_vim_into_a_modern_python_ide.html#tab-completion-and-documentation
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
+
+" gundo
+"
+map <leader>g :GundoToggle<CR>
+
+"pyflakes
+"
+let g:pyflakes_use_quickfix=0
+
+"Pep8
+"
+let g:pep8_map='<leader>8'
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
+retab
+
+set number
+" NERDTREE
+"
+map <leader>n :NERDTreeToggle<CR>
+
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+"Rope-vim
+"
+map <leader>j :RopeGoToDefinition<CR>
+map <leader>r :RopeRename<CR>
+
+
+"ACK
+"
+nmap <leader>a <Esc>:Ack!

@@ -78,6 +78,10 @@ Plugin 'kchmck/vim-coffee-script'
 " " YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
 
+
+"Testing with Vim-Jedi
+"Plugin 'davidhalter/jedi-vim'
+
 " " TernJS
 Plugin 'marijnh/tern_for_vim'
 
@@ -100,10 +104,54 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'nvie/vim-flake8'
 
 "vim-pyunit
-Plugin 'nvie/vim-pyunit'
+" Plugin 'nvie/vim-pyunit'
 
 "vim-python-pep8-indent
 Plugin 'hynek/vim-python-pep8-indent'
+
+
+"######################################################
+"   reference https://github.com/amic/vimrc
+"######################################################
+
+"snipmate
+"snipmate prereqs
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'honza/vim-snippets'
+
+Plugin 'garbas/vim-snipmate'
+
+"BufExplorer
+Plugin 'vim-scripts/bufexplorer.zip'
+
+"Zencoding
+Plugin 'mattn/emmet-vim'
+
+"vim indent object
+Plugin 'michaeljsmith/vim-indent-object'
+
+"taglist
+Plugin 'vim-scripts/taglist.vim'
+
+"vim-multipl-cursors
+Plugin 'terryma/vim-multiple-cursors'
+
+"goyo
+Plugin 'junegunn/goyo.vim'
+
+"vim-zenroom2
+Plugin 'amix/vim-zenroom2'
+
+"########### MODES ###########
+"nginx.vim
+Plugin 'vim-scripts/nginx.vim'
+
+"Colors
+Plugin 'vim-scripts/peaksea'
+Plugin 'wgibbs/vim-irblack'
+Plugin 'therubymug/vim-pyte'
+
 
 call vundle#end()
 
@@ -139,7 +187,8 @@ set autoread
 set showcmd
 set showmode
 
-
+" get rid of the swap files as they are ANNOYING
+set noswapfile
 
 
 "
@@ -294,7 +343,7 @@ nmap [h <Plug>GitGutterPrevHunk
 "
 "NERDTree
 "
-map <C-n> :NERDTreeToggle<CR>
+map <F9> :NERDTreeToggle<CR>
 
 let NERDTreeChDirMode = 2
 
@@ -363,3 +412,10 @@ highlight link GitGutterAdd DiffAdd
 highlight link GitGutterChange DiffChange
 highlight link GitGutterDelete DiffDelete
 highlight link GitGutterChangeDelete DiffDelete
+
+
+"########### Key mappings
+"
+"bufexplorer
+map <leader>o :BufExplorer<cr>
+
