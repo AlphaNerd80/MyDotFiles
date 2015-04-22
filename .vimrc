@@ -294,7 +294,9 @@ autocmd BufWritePost *.py call Flake8()
 "
 "Ctrl-p
 "
-let g:ctrlp_map = '<c-p>'
+"" note, default CtrlP bindings conflict with yankring, reassigning CtrlP
+nnoremap <leader>p :CtrlP<CR>
+
 
 "
 "Diff
@@ -361,7 +363,7 @@ nmap [h <Plug>GitGutterPrevHunk
 "
 "NERDTree
 "
-map <F9> :NERDTreeToggle<CR>
+map <F12> :NERDTreeToggle<CR>
 
 let NERDTreeChDirMode = 2
 
