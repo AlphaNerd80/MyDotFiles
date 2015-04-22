@@ -78,9 +78,8 @@ Plugin 'kchmck/vim-coffee-script'
 " " YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
 
-
-"Testing with Vim-Jedi
-"Plugin 'davidhalter/jedi-vim'
+"powerline
+Plugin 'powerline/powerline'
 
 " " TernJS
 Plugin 'marijnh/tern_for_vim'
@@ -109,6 +108,14 @@ Plugin 'nvie/vim-flake8'
 "vim-python-pep8-indent
 Plugin 'hynek/vim-python-pep8-indent'
 
+"gundo
+"
+Plugin 'sjl/gundo.vim'
+
+
+"yankring
+"
+Plugin 'vim-scripts/YankRing.vim'
 
 "######################################################
 "   reference https://github.com/amic/vimrc
@@ -180,7 +187,10 @@ set shiftround
 set autoindent
 set number
 set showmatch
-
+set warn
+set wildmenu
+set list
+set listchars=tab:=»,trail:·
 set more
 set autoread
 
@@ -190,7 +200,15 @@ set showmode
 " get rid of the swap files as they are ANNOYING
 set noswapfile
 
+"Gundo
+"
+nnoremap <F10> :GundoToggle<CR>
 
+
+"Powerline
+set laststatus=2
+let g:Powerline_symbols='fancy'
+set t_Co=256
 "
 "OMNI completion
 "
