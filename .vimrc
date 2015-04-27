@@ -1,7 +1,7 @@
 
 
-" .vimrc
-
+" .v imrc
+ 
 " {{{ Vundle
 " Of course
 set nocompatible
@@ -12,8 +12,6 @@ set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-
-
 
 " :Ack
 Plugin 'mileszs/ack.vim'
@@ -200,6 +198,12 @@ set showmode
 " get rid of the swap files as they are ANNOYING
 set noswapfile
 
+set modifiable
+
+
+"Turn on mouse (sometimes its useful) in console but really this is for when gvim is used
+set mouse=a
+"
 "Gundo
 "
 nnoremap <F10> :GundoToggle<CR>
@@ -219,6 +223,9 @@ set updatetime=750
 "
 "ACK
 "
+"set The_silver_searcher as the default searcher
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 let g:ackprg="ack --noenv -H --nocolor -nogroup --column --smartcase --after=0 --before=0"
 map <C-a> :Ack
 
@@ -295,8 +302,12 @@ autocmd BufWritePost *.py call Flake8()
 "Ctrl-p
 "
 "" note, default CtrlP bindings conflict with yankring, reassigning CtrlP
-nnoremap <leader>p :CtrlP<CR>
-
+nnoremap <leader>p :CtrlPMixed<CR>
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,'__init__.py','__pycache__.py'
+let g:ctrlp_custom_ignore = {
+    \ 'dir': '\v[\/]\.(git|hg|svn)$',
+    \ 'file': '\v\.(exe|so|dll)$',
+    \ }
 
 "
 "Diff
@@ -416,6 +427,9 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
+
+map <leader>] :bn<cr>
+map <leader>[ :bp<cr>
 
 syntax on
 
